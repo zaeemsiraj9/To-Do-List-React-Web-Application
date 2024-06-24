@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* App.css */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.App {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  margin-top: 50px;
+}
+
+h1 {
+  color:white;
+  text-shadow: black;
+  animation: fadeIn 1s ease-out;
+  animation: floatUp 1s ease-out;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #009eb3;
+  color: white;
+  border:transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  
+}
+
+.todo-item {
+  display: flex;
+  border:transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 600px;
+  animation: floatUp 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+.todo-item button {
+  margin-left: 10px;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  border:transparent;
+  color: #888;
+  background-color: #008820; /* Light green background */
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out;
 }
